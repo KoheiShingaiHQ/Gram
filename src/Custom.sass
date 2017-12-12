@@ -1,0 +1,1262 @@
+*
+  box-sizing: border-box
+  -webkit-font-smoothing: antialiased
+
+body
+  overflow-x: hidden
+
+header
+  position: fixed
+  left: 0px
+  top: 0px
+  z-index: 2
+  width: 100%
+  height: 64px
+  overflow: hidden
+  background: #fff
+  border-bottom: 1px solid #e6e6e6
+  > div
+    position: absolute
+    top: 0px
+    height: 64px
+    overflow: hidden
+  > .left
+    left: 0px
+    width: calc(100% - 256px)
+    svg 
+      display: none
+      position: absolute
+      top: 0px
+      margin-top: 19.5px
+      margin-bottom: 19.5px
+      fill: rgba(0, 0, 0, 0.54)
+      z-index: 0
+      &.menu
+        left: 0px
+        margin-left: 16px
+      &.search-button
+        right: 0px
+        margin-right: 16px
+  > .right
+    right: 0px
+    width: 256px
+    border-left: 1px solid #e6e6e6
+  h1
+    position: absolute
+    left: 0px
+    top: 0px
+    display: block
+    margin-top: 18.5px
+    margin-bottom: 20.5px
+    margin-left: 40px
+    color: #262626
+    font-family: "Open Sans", sans-serif
+    text-decoration: none !important
+    font-size: 18px
+    font-weight: 400
+    cursor: pointer
+    -webkit-font-smoothing: antialiased
+  nav
+    ul
+      height: 64px
+      margin: 0px
+      margin-right: 7px
+      list-style: none
+      text-align: center
+      &[data-selected="list"]
+        li.list
+          color: #3897f0
+          cursor: default 
+      &[data-selected="detail"]
+        li.detail
+          color: #3897f0
+          cursor: default
+    li
+      float: right
+      margin-top: 22.5px
+      margin-bottom: 22.5px
+      margin-right: 32px
+      color: rgba(0, 0, 0, 0.54)
+      font-size: 13px
+      text-transform: uppercase
+      font-family: "Open Sans", sans-serif
+      cursor: pointer
+      -webkit-font-smoothing: antialiased
+      &#close-menu
+        display: none
+  section.search
+    svg
+      position: absolute
+      left: 0px
+      margin-top: 19.5px
+      margin-bottom: 19.5px
+      margin-left: 24px
+      color: rgba(0, 0, 0, 0.54)
+      fill: rgba(0, 0, 0, 0.54)
+    input
+      position: absolute
+      right: 0px
+      height: 100%
+      align-self: stretch
+      -webkit-appearance: textfield
+      border: 0
+      -webkit-box-flex: 1
+      -webkit-flex: 1
+      flex: 1
+      font-size: 15px
+      outline: none
+      padding: 0px
+      padding-left: 12px
+      padding-right: 12px
+      width: calc(100% - 48px)
+      font-family: "Open Sans", sans-serif
+      -webkit-font-smoothing: antialiased
+      opacity: .54
+    #search-result
+      display: none
+      &.show
+        display: block
+        position: fixed
+        width: calc(100% - 256px)
+        height: calc(100% - 151px)
+        left: 0px
+        top: 64px
+        overflow: hidden
+        background: #fff
+    section#search-result
+      padding-top: 20px
+      padding-left: 40px
+      padding-right: 40px
+      p
+        margin: 0
+        display: none
+        font-size: 15px
+        color: rgba(0, 0, 0, 0.54)
+        text-align: left
+      &.en
+        p.en
+          display: block
+          font-family: 'Roboto', sans-serif
+      &.ja
+        p.ja
+          display: block
+          font-family: 'Noto Sans JP', sans-serif
+          font-weight: 300
+      a.results
+        text-align: left
+        text-indent: 4px
+        text-decoration: none
+        padding-top: 13px
+        display: block
+        h3
+          text-transform: capitalize
+          border-top: 1px dashed #e6e6e6
+          color: #3897f0
+          margin: 0px
+        p
+          display: block
+      &.en
+        a.results
+          h3
+            font-family: "Roboto", sans-serif
+            font-weight: 200
+            padding-top: 10px
+      &.ja
+        a.results
+          h3
+            font-family: 'Noto Sans JP', sans-serif
+            font-size: 18px
+            font-weight: 300
+            padding-top: 7px
+
+main
+  &#top
+    padding: 26px 26px 26px
+    width: 100%
+    margin-top: 64px
+    opacity: .93
+    filter: sepia(.11)
+  &.ja
+    .content > h2,
+    .content > h3,
+    .content > h4,
+    .content > h5
+      font-family: 'Noto Sans JP', sans-serif !important
+      font-weight: 300 !important
+      font-size: 30px !important
+  section#content-top
+    padding: 12px 26px 26px
+    width: 100%
+    &.ja
+      .content > h2,
+      .content > h3,
+      .content > h4,
+      .content > h5
+        font-family: 'Noto Sans JP', sans-serif !important
+        font-weight: 300 !important
+        font-size: 30px !important
+  section#content-top, &#top
+    opacity: .82
+    section
+      &#contents-full 
+        ul
+          margin: 0
+          padding: 0
+          position: relative
+          list-style-type: none
+          overflow: hidden
+          a
+            text-decoration: none
+          li
+            background: #fafafa
+            border-bottom: 12px solid #fff
+            width: 100%
+            cursor: pointer
+            min-height: 320px
+            background-size: auto
+            background-position: 50%
+            background: repeat
+      &#contents-half 
+        ul
+          margin: 0
+          padding: 0
+          position: relative
+          list-style-type: none
+          overflow: hidden
+          li
+            float: left
+            width: 50%
+            background: #fafafa
+            border-bottom: 12px solid #fff
+            color: #696969
+            cursor: pointer
+            overflow: hidden
+            min-height: 320px
+          li:nth-child(odd)
+            border-right: 6px solid #fff
+          li:nth-child(even)
+            border-left: 6px solid #fff
+    .content 
+      z-index: 1
+      -webkit-box-flex: 0
+      -webkit-flex-grow: 0
+      -ms-flex-positive: 0
+      flex-grow: 0
+      padding-top: 65px
+      color: #787878
+      text-align: center
+      width: 100%
+      &> h2
+        margin: 0
+        padding: 0
+        font-size: 56px
+        line-height: 1.07143
+        font-weight: 600
+        letter-spacing: -.005em
+        font-family: 'Roboto', sans-serif
+        -webkit-font-smoothing: antialiased   
+      &> h3
+        font-size: 31px
+        line-height: 1.14815
+        font-weight: 300
+        letter-spacing: .008em
+        margin-top: 6px
+        font-family: 'Roboto', sans-serif
+        -webkit-font-smoothing: antialiased
+      &> h4
+        width: 100%
+        margin: 0
+        padding: 0
+        margin-top: -27px
+        font-size: 48px
+        line-height: 1.08365
+        font-weight: 600
+        letter-spacing: -.003em
+        font-family: 'Roboto', sans-serif
+        -webkit-font-smoothing: antialiased
+      &> h5
+        width: 100%
+        margin: 0
+        padding: 0
+        margin-top: 0.2em
+        font-size: 24px
+        line-height: 1.16667
+        font-weight: 400
+        letter-spacing: .009em
+        font-family: 'Roboto', sans-serif
+        -webkit-font-smoothing: antialiased
+  &#about
+    position: relative
+    top: 64px
+    margin: 0 auto
+    margin-top: 12px
+    margin-bottom: 68px
+    max-width: 2560px
+    padding: 0px 12px
+    opacity: .93
+    section#contents-square
+      ul
+        margin: 2px 2px
+        padding: 0
+        position: relative
+        list-style-type: none
+        overflow: hidden
+        li
+          float: left
+          display: block
+          width: calc(100%*(1/3) - 5.4px)
+          overflow: visible
+          background: #fafafa
+          cursor: pointer
+          margin-left: 8px
+          margin-bottom: 8px
+          &:nth-child(3n - 2)
+            margin-left: 0px
+          &> a > div
+            position: relative
+            width: 100%
+            padding-top: 100%
+            overflow: hidden
+            vertical-align: bottom
+            background-color: #fafafa
+            background-repeat: no-repeat
+            background-position: center
+            background-size: cover
+            background-position: 50%
+            z-index: 1
+            &:hover
+              opacity: .9
+          .content-label 
+            position: absolute
+            bottom: 0px
+            left: 0px
+            right: 0px
+            z-index: 1
+            padding: 12px
+            -webkit-box-flex: 0
+            -webkit-flex-grow: 0
+            -ms-flex-positive: 0
+            flex-grow: 0
+            padding-top: 65px
+            padding-bottom: 10px
+            color: #fff
+            text-align: left
+            background-image: -webkit-linear-gradient(bottom,rgba(0,0,0,.4) 0,transparent 100%)
+            background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0,rgba(0,0,0,.4)),color-stop(100%,transparent))
+            background-image: linear-gradient(to top,rgba(0,0,0,.4) 0,transparent 100%)
+            &> h2
+              font-weight: 300
+              font-size: 27px
+              line-height: 1.2em
+              margin: 0px
+              overflow: hidden
+              text-overflow: ellipsis
+              display: -webkit-box
+              -webkit-line-clamp: 2
+              -webkit-box-orient: vertical
+              font-family: 'Roboto', sans-serif
+            &> h3
+              margin: 0px
+              display: block
+              font-size: 15px
+              font-weight: 300
+              line-height: 1.4em
+              font-family: 'Roboto', sans-serif
+              text-indent: 1px 
+      &.ja .content-label
+        &> h2
+          font-family: 'Noto Sans JP', sans-serif
+          font-weight: 300
+          font-size: 25px
+        &> h3
+          font-family: 'Noto Sans JP', sans-serif
+          font-weight: 400
+          font-size: 13px
+  &#article
+    position: static
+    top: 64px
+    margin: 0 auto
+    margin-top: 64px
+    margin-bottom: 24px
+    max-width: 2560px
+    padding: 0px 12px
+    article#content-panel
+      filter: sepia(.11)
+      opacity: .86
+      top: 0px
+      left: 0px
+      width: calc(100% - 256px)
+      height: calc(100% - 151px)
+      margin-top: 64px
+      overflow-y: auto
+      position: absolute
+      padding: 12px
+      text-align: left
+      &::-webkit-scrollbar
+        display: none
+      &> section
+        padding: 12px 26px 26px
+        width: 100%      
+      section#article-header  
+        padding: 12px 26px
+        width: 100%
+        &> h1 
+          text-align: left
+          font-size: 43px
+          letter-spacing: -.5px
+          line-height: 64px
+          margin: 0px
+          font-family: "Roboto", sans-serif
+          font-weight: 200
+          color: rgba(0, 0, 0, 0.45)
+          border-bottom: 1px solid #e6e6e6
+        &.en> h1 
+          font-family: "Roboto", sans-serif
+        &.ja> h1 
+          font-family: 'Noto Sans JP', sans-serif
+          font-weight: 300
+          font-size: 41px
+        &> h1:first-letter 
+          text-transform: capitalize
+    section
+      &#contents-full 
+        ul
+          margin: 0
+          padding: 0
+          position: relative
+          list-style-type: none
+          overflow: hidden
+          li
+            background: #fafafa
+            border-bottom: 12px solid #fff
+            width: 100%
+            cursor: pointer
+            min-height: 320px
+            background-size: auto;
+            background-position: 50%;
+            background: repeat;
+      &#contents-half 
+        ul
+          margin: 0
+          padding: 0
+          position: relative
+          list-style-type: none
+          overflow: hidden
+          li
+            float: left
+            width: 50%
+            background: #fafafa
+            border-bottom: 12px solid #fff
+            color: #696969
+            cursor: pointer
+            overflow: hidden
+            min-height: 320px
+          li:nth-child(odd)
+            border-right: 6px solid #fff
+          li:nth-child(even)
+            border-left: 6px solid #fff
+      section.content-timeline 
+        padding: 12px 26px
+        width: 100%
+        a
+          text-decoration: none
+        &> time
+          display: block
+          padding-right: 100px
+          position: absolute
+          &> span
+            display: block
+            text-align: right
+            font-family: 'Roboto', sans-serif
+            font-weight: 200
+            &:first-child
+              font-size: 0.9em
+              color: #bdd0db
+            &:last-child
+              font-size: 2.3em
+              color: rgb(128, 128, 128)
+        &.en> time > span
+          font-family: 'Roboto', sans-serif
+        &.ja> time > span
+          font-family: 'Noto Sans JP', sans-serif
+          &:last-child
+            font-size: 2em
+        span:last-child
+          font-size: 1.8em
+        .line
+          position: absolute
+          width: 40px
+          height: 40px
+          font-family: 'ecoico'
+          speak: none
+          font-style: normal
+          font-weight: normal
+          font-variant: normal
+          text-transform: none
+          font-size: 1.4em
+          line-height: 40px
+          -webkit-font-smoothing: antialiased
+          color: #fff
+          background: #656565
+          border-radius: 50%
+          box-shadow: 0 0 0 8px #bbbbbb
+          text-align: center
+          margin-left: 128px
+          margin-top: 9px
+          &:before
+            content: ''
+            position: absolute
+            width: 10px
+            background: #bbbbbb
+            height: 1100%
+            margin-top: 47px
+            margin-left: -5px
+        .content
+          background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/grey_wash_wall.png)
+          margin: 10px 0 0 199px
+          color: rgba(255,255,255,.88)
+          padding: 2em
+          font-size: 1.2em
+          font-weight: 300
+          line-height: 1.4
+          position: relative
+          padding-bottom: 34px
+          cursor: pointer
+          text-align: left
+          background-size: auto
+          background-repeat: repeat
+          &:hover
+            opacity: .8
+          &:after
+            right: 100%
+            border: solid transparent
+            content: " "
+            height: 0
+            width: 0
+            position: absolute
+            pointer-events: none
+            border-right-color: #616161
+            border-width: 10px
+            top: 10px
+          h2
+            margin-top: 0px
+            padding: 0 0 10px 0
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.54)
+            font-family: 'Roboto', sans-serif
+            font-weight: 300
+          p
+            font-size: 22px
+            margin-bottom: 0px
+          img
+            max-height: 210px
+            border: 1px solid rgba(255, 255, 255, 0.57)
+            margin-top: 12px
+            max-width: 100%           
+          &.ja .content p
+            font-size: 20px
+          &.en .content h2, &.en .content p
+            font-family: 'Roboto', sans-serif
+          &.ja .content h2, &.ja .content p
+            font-family: 'Noto Sans JP', sans-serif
+            font-weight: 300
+      section.content-github 
+        padding: 12px 26px
+        width: 100%
+        iframe
+          overflow: hidden
+          width: 100%
+          float: none
+          visibility: visible
+          height: 442px
+          background: #ffffff
+          padding: 12px
+          border: 1px solid #e5e5e5
+          margin-top: 8px
+          opacity: 0.95
+          padding-top: 22px
+          padding-bottom: 22px
+          margin-bottom: -6px
+        section.related
+          padding: 16px 0px
+          width: 100%
+          height: 0px
+          &.show
+            height: auto
+            &> section.child
+              display: block
+          section.child
+            padding: 0px
+            margin-top: 25px
+            border-left: 2px dashed #d6d6d6
+            padding-left: 21px
+            width: 100%
+            padding-top: 2px
+            padding-bottom: 15px
+            background: #fff
+            display: none
+            margin-bottom: 18px
+            pre
+              width: calc(100% - 21px)
+        h1, h2, h3, h4, h5, h6
+          margin-top: 24px
+          margin-bottom: 16px
+          font-weight: 600
+          line-height: 1.25
+          color: rgba(0, 0, 0, 0.45)
+        &.en 
+          h1, h2, h3, h4, h5, h6
+            font-family: "Roboto", sans-serif
+            font-weight: 200
+        &.ja
+          h1, h2, h3, h4, h5, h6
+            font-family: 'Noto Sans JP', sans-serif
+            font-weight: 300
+        p
+          margin-bottom: 0px
+          font-weight: 300
+          color: #6f6f6f
+        &.en 
+          p
+            font-family: "Roboto", sans-serif
+            font-size: 17px
+        &.ja 
+          p
+            font-size: 16px
+            font-family: 'Noto Sans JP', sans-serif
+            font-weight: 300
+        h1
+          padding-bottom: 0.3em
+          margin-top: 5px
+        &.en 
+          h1
+            font-size: 32px
+            border-bottom: 1px dashed #eaecef
+        &.ja 
+          h1
+            font-size: 30px
+            border-bottom: 1px dashed #eaecef
+        h2
+          padding-bottom: 0.3em
+          margin-top: 28px
+          margin-bottom: 6px
+        &.en 
+          h2
+            font-size: 27px
+            margin-top: 28px
+        &.ja 
+          h2
+            padding-bottom: 0.3em
+            font-size: 25px
+        h3.repository
+          position: absolute
+          right: 70px
+          transform: translateY(-9px)
+          color: #3897f0
+        &.en 
+          h3.repository
+            font-size: 17px;
+            transform: translateY(-8px)
+        &.ja 
+          h3.repository
+            font-size: 15px
+        &.en .ja.repository, &.ja .en.repository
+          display: none
+        h3
+          padding-bottom: 0.3em
+          margin-top: 28px
+          margin-bottom: 6px
+          &.switch
+            font-size: 16.5px
+            color: #FFA955
+            cursor: pointer
+            margin-top: 4px 
+        &.en 
+          h3
+            font-size: 23px
+            &.switch
+              font-size: 16.5px
+              color: #FFA955
+              cursor: pointer
+              margin-top: 4px 
+              &:before
+                content: "+"
+                margin-right: 3.5px
+                margin-left: 0px
+                font-family: "Roboto", sans-serif 
+              &:nth-last-child(2)          
+                margin-bottom: 29px
+          .show
+            h3
+              &.switch
+                &:before
+                  content: "-"
+                  margin-right: 8px
+                  margin-left: 0px
+                  font-family: "Roboto", sans-serif
+        &.ja 
+          h3
+            font-family: 'Noto Sans JP', sans-serif
+            font-size: 21px
+            &.switch
+              font-size: 15.5px
+              color: rgb(255, 141, 53)
+              cursor: pointer
+              margin-top: 4px
+              &:before
+                content: "+"
+                margin-right: 3.5px
+                margin-left: 0px
+                font-family: 'Noto Sans JP', sans-serif
+                font-weight: 300
+              &:nth-last-child(2)
+                margin-bottom: 29px
+          .show
+            h3
+              &.switch
+                font-size: 15.5px
+                color: rgb(255, 141, 53)
+                cursor: pointer
+                margin-top: 4px
+                &:before
+                  content: "-"
+                  margin-right: 8px
+                  margin-left: 0px
+                  font-family: 'Noto Sans JP', sans-serif
+                  font-weight: 300                
+        blockquote
+          padding: 0 11px
+          margin-left: 1px
+          margin-right: 0px
+          color: #6a737d
+          border-left: 2.5px solid rgb(224, 224, 224)
+          font-weight: 300
+        &.en blockquote
+          font-family: "Roboto", sans-serif
+          font-size: 20px
+        &.ja blockquote
+          font-family: 'Noto Sans JP', sans-serif
+          font-size: 16px
+        a
+          color: #3897f0
+          text-decoration: none
+          &:hover
+            text-decoration: underline
+        pre
+          padding: 16.5px
+          overflow: auto
+          font-size: 120%
+          line-height: 1.35
+          background-color: #f8f8f8
+          margin-bottom: 0
+          word-break: normal
+          margin-top: 0px
+          color: #545454
+        pre + pre
+          margin-top: 8px
+        code .hljs-comment
+          opacity: .5
+        &.ja code .hljs-comment
+          font-size: 82%
+        p > code
+          padding: 0
+          padding-top: 0.2em
+          padding-bottom: 0.2em
+          margin: 0
+          font-size: 85%
+          background-color: rgba(27,31,35,0.05)
+          color: #545454
+        p > code:before, p > code:after
+          letter-spacing: -0.2em
+          content: "\00a0"
+        img
+          width: 100%
+          outline: 1px solid #e6e6e6
+    section#side-panel
+      position: absolute
+      right: 0px
+      margin: 0px
+      margin-top: 0px
+      width: 256px
+      height: calc(100% - 151px)
+      padding: 20px 20px 20px 24px
+      border-left: 1px solid #e6e6e6
+      #side-language
+        text-align: left
+        h2
+          margin: 0px
+          margin-bottom: 14px
+          color: rgba(0, 0, 0, 0.54)
+          font-size: 14px
+          font-weight: 400
+          font-family: 'Roboto', sans-serif
+          &.en
+            font-family: 'Roboto', sans-serif  
+          &.ja
+            font-family: 'Noto Sans JP', sans-serif
+            font-weight: 300
+        .en h2.en
+          display: block
+        .en h2.ja
+          display: none
+        .ja h2.en
+          display: none
+        .ja h2.ja
+          display: block
+        .selector
+          display: -webkit-box
+          display: -webkit-flex
+          display: -webkit-box
+          display: -moz-box
+          display: -webkit-flex
+          display: -ms-flexbox
+          display: flex
+          -webkit-box-align: center
+          -webkit-align-items: center
+          -webkit-align-items: center
+          align-items: center
+          padding: 2px 0px 1px
+          border-bottom-width: 1px
+          border-bottom-style: solid
+          background-color: transparent
+          position: relative
+          -webkit-box-sizing: content-box
+          box-sizing: content-box
+          min-width: 64px
+          min-height: 26px
+          -webkit-box-flex: 1
+          -webkit-flex-grow: 1
+          -webkit-box-flex: 1
+          box-flex: 1
+          -webkit-flex-grow: 1
+          flex-grow: 1
+          border-bottom-color: rgba(0, 0, 0, 0.12)
+          width: 100px
+          margin-left: 4px
+          margin-top: -7px
+          margin-bottom: 20px
+        span.text
+          max-width: 100%
+          -webkit-box-flex: 1
+          flex: 1 1 auto
+          text-overflow: ellipsis
+          white-space: nowrap
+          overflow: hidden
+          padding-bottom: 1px
+          flex-shrink: 1
+          &> div
+            display: inline
+            margin: 0
+            padding: 0
+            border: 0
+            vertical-align: baseline
+            font-size: 15px
+            font-weight: 300
+            color: #3897f0
+            cursor: pointer
+            font-family: 'Roboto', sans-serif
+            text-transform: capitalize
+        .en span.text > div
+          font-family: 'Roboto', sans-serif
+        .ja span.text > div
+          font-family: 'Noto Sans JP', sans-serif
+          font-weight: 300
+        span.icon
+          display: block
+          -webkit-box-align: end
+          -webkit-align-items: flex-end
+          -webkit-align-items: flex-end
+          align-items: flex-end
+          text-align: end
+          height: 19px
+          margin: 0 4px
+          -webkit-transform: translate3d(0, -2px, 0)
+          -webkit-transform: translate3d(0, -2px, 0)
+          transform: translate3d(0, -2px, 0)
+          font-size: 1.2rem
+          fill: #3897f0
+          cursor: pointer
+        #menu
+          display: none
+          position: fixed
+          opacity: 1
+          -webkit-transform: translateY(31px)
+          -webkit-transform: translateY(31px)
+          transform: translateY(31px)
+          -webkit-border-radius: 3px
+          border-radius: 3px
+          z-index: 120
+          min-width: 64px
+          min-height: 100px
+          width: 100px
+          &> div
+            display: -webkit-box
+            display: -webkit-flex
+            display: -webkit-box
+            display: -moz-box
+            display: -webkit-flex
+            display: -ms-flexbox
+            display: flex
+            padding-top: 4px
+            padding-bottom: 4px
+            -webkit-box-orient: vertical
+            -webkit-box-direction: normal
+            -webkit-flex-direction: column
+            -webkit-flex-direction: column
+            flex-direction: column
+            -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12)
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12)
+            max-height: 256px
+            min-height: 48px
+            overflow-y: hidden
+            -webkit-transform-origin: left top
+            -webkit-transform-origin: left top
+            transform-origin: left top
+            -webkit-transform: scale(1)
+            -webkit-transform: scale(1)
+            transform: scale(1)
+            background: #fff
+            &> div
+              color: rgba(0, 0, 0, 0.54)
+              cursor: pointer
+              position: relative
+              display: -webkit-box
+              display: -webkit-flex
+              display: -webkit-box
+              display: -moz-box
+              display: -webkit-flex
+              display: -ms-flexbox
+              display: flex
+              -webkit-box-align: center
+              -webkit-align-items: center
+              -webkit-align-items: center
+              align-items: center
+              width: auto
+              padding: 0 16px 0 16px
+              height: 36px
+              font-family: 'Roboto', sans-serif
+              font-weight: 300
+              font-size: 15px
+              text-transform: capitalize
+              &.selected
+                color: #3897f0
+                cursor: default
+                &:hover
+                  background: #fff            
+              &:hover
+                background: rgb(238,238,238)          
+        &.en #menu > div > div
+          font-family: 'Roboto', sans-serif
+        &.ja #menu > div > div
+          font-family: 'Noto Sans JP', sans-serif
+          font-weight: 300
+      #side-related
+        text-align: left
+        h2
+          margin: 0px
+          margin-bottom: 14px
+          color: rgba(0, 0, 0, 0.54)
+          font-size: 14px
+          font-weight: 400
+          font-family: 'Roboto', sans-serif
+          .en
+            font-family: 'Roboto', sans-serif
+          .ja
+            font-family: 'Noto Sans JP', sans-serif
+            font-weight: 300
+        .en h2.en
+          display: block
+        .en h2.ja
+          display: none
+        .ja h2.en
+          display: none
+        .ja h2.ja
+          display: block
+        ul
+          margin: 0px
+          padding: 0px
+          list-style: none
+        li.side-related-content 
+          height: 20px
+          margin-bottom: 10px
+          margin-top: 0px
+          transform: translateY(-6px)
+          h3
+            display: inline-block
+            position: relative
+            margin: 0 auto
+            min-width: 20px
+            min-height: 20px
+            margin-left: 4px
+            margin-right: 16px
+            letter-spacing: 1px
+            text-decoration: none
+            font-size: 15px
+            font-weight: 300
+            border-left: 2px solid transparent
+            -webkit-box-sizing: border-box
+            white-space: nowrap
+            cursor: pointer
+            outline: none
+            -webkit-user-select: none
+            color: #3897f0
+            font-family: 'Roboto', sans-serif
+            &:first-letter
+              text-transform: capitalize
+          &.en h3
+            font-family: 'Roboto', sans-serif
+          &.ja h3
+            font-family: 'Noto Sans JP', sans-serif
+            font-weight: 300
+
+footer
+  position: absolute
+  width: 100%
+  margin: 0
+  background: #fff
+  border-top: 1px solid #e6e6e6
+  bottom: 0px
+  &[data-selected=""]
+    position: absolute
+  &[data-selected="list"]
+    position: static
+    &[data-scroll="true"]
+      position: static
+    &[data-scroll="false"]
+      position: absolute
+  &[data-selected="detail"]
+    position: absolute
+    bottom: 0px
+  section
+    display: -ms-flexbox
+    display: flex
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+    margin: 0 auto
+    max-width: 100%
+    padding: 16px 0 0
+    > section
+      -ms-flex: 1 0 auto
+      flex: 1 0 auto
+      display: -ms-flexbox
+      display: flex
+      -ms-flex-wrap: wrap
+      flex-wrap: wrap
+      min-width: 100%
+      padding-top: 0px
+  .links
+    -ms-flex-wrap: nowrap
+    flex-wrap: nowrap
+    padding-right: 70px
+    flex: 0 0 auto
+    ul
+      margin-left: 0
+      list-style: none
+      -ms-flex-wrap: nowrap
+      flex-wrap: nowrap
+    li
+      margin: 0
+      padding: 0
+      -ms-flex: 0 0 auto
+      flex: 0 0 auto
+      float: left
+      height: 24px
+      margin-right: 30px
+      margin-bottom: 30px
+      width: 24px
+    svg
+      overflow: hidden
+      width: 24px
+      height: 24px
+      padding: 0
+      fill: rgba(0, 0, 0, 0.54)
+      vertical-align: top
+      display: inline-block
+
+@media only screen and (max-width: 840px)
+  body
+    &.show-search
+      overflow-y: hidden
+  header
+    position: absolute
+    &.show-menu
+      height: 100%
+    .left
+      width: 100%
+      svg
+        display: block
+        &.search-button
+          display: none
+          &[data-selected="detail"]
+            display: block
+    .right
+      transform: translateX(257px)
+    nav
+      ul
+        display: none
+    &.show-menu
+      nav
+        ul
+          display: block
+          position: fixed
+          width: 100%
+          height: 100%
+          padding: 0px
+          overflow: hidden
+          background: rgba(255, 255, 255, 0.95)
+          margin: 0px
+          z-index: 1
+          li
+            width: 100%
+            margin-left: 0px
+            margin-right: 0px
+            &#close-menu
+              display: block
+      section.search
+        svg
+          display: none
+
+  main
+    &#top
+      padding: 0px
+    section#content-top, &#top
+      section
+        &#contents-full
+          ul
+            li
+              padding: 12px
+            a:nth-last-child(1)
+              display: block
+              margin-bottom: -12px
+        &#contents-half 
+          ul
+            li
+              width: 100%
+              border-left: none !important
+              border-right: none !important
+            a:nth-last-child(1)
+              display: block
+              margin-bottom: -12px
+        .content
+          padding-top: 39px
+          &> h2, &> h4
+            font-size: 32px
+            line-height: 1.125
+            font-weight: 600
+            letter-spacing: .004em
+          &> h4
+            margin-top: -16px
+            width: 100%
+          &> h3, &> h5
+            width: 100%
+            line-height: 1.42115
+            font-weight: 400
+            letter-spacing: .012em
+    &#about
+      padding: 0px
+      margin-top: 0px
+      section#contents-square 
+        ul
+          margin: 0px
+          li
+            width: 100%
+            border-left: none !important
+            border-right: none !important
+            margin-left: 0px
+            margin-right: 0px
+            &:nth-last-child(1)
+              margin-bottom: 0px
+            a > div:hover
+              opacity: 1
+    &#article
+      padding: 0px
+      margin-top: 0px
+      overflow-x: hidden
+      &.show-search 
+        section#article-header, section.content-timeline, section.content-github, section#content-featured
+      article#content-panel
+        width: 100%
+        height: 100%
+        padding: 0px
+        overflow-x: hidden
+        position: relative
+        &> section
+          padding: 12px 26px
+        section#article-header
+          &.en> h1 
+            font-size: 31px
+            line-height: 45px
+            padding-bottom: 8px
+          &.ja h1 
+            font-size: 31px
+            line-height: 45px
+            padding-bottom: 8px
+        section.content-timeline
+          padding: 12px 0px 
+          &> time
+            position: relative
+            width: 100%
+            padding: 0px
+            &> span:first-child
+              font-size: 1.5em
+              float: left
+              text-align: left
+            &> span:last-child
+              font-size: 1.5em
+              text-align: left
+              text-indent: 2px
+          &.en> time > span:first-child
+            font-size: 1em
+            margin-top: 6px
+          &.en> time > span:last-child
+            text-indent: 3px
+          &.ja> time > span:last-child
+            font-size: 1.5em
+          .line, .line:before
+            display: none
+          .content
+            margin: 0
+            &:hover
+              opacity: 1
+            &:after
+              display: none
+            & h2
+              font-size: 24px
+          &.ja .content h2
+            font-size: 22px
+          &.en .content p
+            font-size: 19px
+          &.ja .content p
+            font-size: 17px
+        section.content-github
+          iframe
+            padding-left: 0px
+            padding-right: 0px
+          padding: 12px 12px
+          &.en h1
+            font-size: 26px
+          &.ja h1
+            font-size: 24px
+          h3.repository
+            display: none
+      section#side-panel
+        display: none
+      &.show-search
+        section#side-panel
+          display: block
+          background: #fff
+          margin-top: 64px
+          height: 100%
+          width: 100%
+          border: none
+          position: absolute
+          top: 0px
+          &:before
+            content: ""
+  footer
+    &[data-selected="detail"]
+      position: relative
+      
+@media only screen and (max-height: 1162px)
+  footer
+    &[data-selected=""]
+      position: static
